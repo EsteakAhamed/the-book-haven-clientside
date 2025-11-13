@@ -9,16 +9,16 @@ import BookDetails from "../pages/BookDetails";
 import UpdateBook from "../pages/UpdateBook";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import ErrorPage from "../pages/ErrorPage"; 
+import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "../layout/PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
-        errorElement: <ErrorPage />, 
+        errorElement: <ErrorPage />,
         children: [
-            { path: "/", element: <Home /> },
+            { path: "/", element: <Home /> }, // ✅ UNCOMMENT THIS
             { path: "/all-books", element: <AllBooks /> },
             { path: "/add-book", element: <PrivateRoute><AddBook /></PrivateRoute> },
             { path: "/my-books", element: <PrivateRoute><MyBooks /></PrivateRoute> },
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             { path: "/update-book/:id", element: <PrivateRoute><UpdateBook /></PrivateRoute> },
             { path: "/login", element: <Login /> },
             { path: "/register", element: <Register /> },
-            { path: "*", element: <ErrorPage /> }, 
+            { path: "*", element: <ErrorPage /> },
         ],
     },
 ]);
