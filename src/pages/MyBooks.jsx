@@ -9,7 +9,7 @@ const MyBooks = () => {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = () => {
-        axios.get(`http://localhost:5000/myBooks/${user.email}`).then(res => setBooks(res.data));
+        axios.get(`https://the-book-haven-serverside.vercel.app/myBooks/${user.email}`).then(res => setBooks(res.data));
     };
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const MyBooks = () => {
     }, []);
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/delete-book/${id}`);
+        await axios.delete(`https://the-book-haven-serverside.vercel.app/delete-book/${id}`);
         toast.success("Book deleted");
         fetchBooks();
     };

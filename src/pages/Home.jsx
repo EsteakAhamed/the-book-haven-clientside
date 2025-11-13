@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         const fetchLatestBooks = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/books/latest");
+                const response = await axios.get("https://the-book-haven-serverside.vercel.app/api/books/latest");
                 setLatestBooks(response.data);
                 setLoading(false);
             } catch (error) {

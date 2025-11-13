@@ -12,11 +12,11 @@ const BookDetails = () => {
     const [newComment, setNewComment] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/book-details/${id}`)
+        axios.get(`https://the-book-haven-serverside.vercel.app/book-details/${id}`)
             .then(res => setBook(res.data));
 
         const fetchComments = () => {
-            axios.get(`http://localhost:5000/comments/${id}`)
+            axios.get(`https://the-book-haven-serverside.vercel.app/comments/${id}`)
                 .then(res => setComments(res.data));
         };
 
@@ -36,7 +36,7 @@ const BookDetails = () => {
             comment: newComment
         };
 
-        await axios.post("http://localhost:5000/comments", commentData);
+        await axios.post("https://the-book-haven-serverside.vercel.app/comments", commentData);
         setNewComment("");
         toast.success("Comment added");
     };

@@ -9,7 +9,7 @@ const UpdateBook = () => {
     const [formData, setFormData] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/book-details/${id}`).then(res => setFormData(res.data));
+        axios.get(`https://the-book-haven-serverside.vercel.app/book-details/${id}`).then(res => setFormData(res.data));
     }, [id]);
 
     const handleChange = (e) => {
@@ -18,7 +18,7 @@ const UpdateBook = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:5000/update-book/${id}`, formData);
+        await axios.put(`https://the-book-haven-serverside.vercel.app/update-book/${id}`, formData);
         toast.success("Book updated");
         navigate("/my-books");
     };

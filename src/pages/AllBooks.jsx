@@ -7,7 +7,7 @@ const AllBooks = () => {
     const [sortOrder, setSortOrder] = useState("none");
 
     useEffect(() => {
-        axios.get("http://localhost:5000/all-books")
+        axios.get("https://the-book-haven-serverside.vercel.app/all-books")
             .then(res => setBooks(res.data))
             .catch(err => console.error(err));
     }, []);

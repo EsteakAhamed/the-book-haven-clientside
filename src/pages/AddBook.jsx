@@ -26,7 +26,7 @@ const AddBook = () => {
       userName: user.displayName,
     };
     try {
-      await axios.post("http://localhost:5000/add-book", book);
+      await axios.post("https://the-book-haven-serverside.vercel.app/add-book", book);
       toast.success("Book added successfully");
       setFormData({
         title: "",
