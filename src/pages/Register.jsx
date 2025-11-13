@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
@@ -47,57 +46,61 @@ const Register = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow rounded">
-            <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
-            <form onSubmit={handleRegister} className="space-y-4">
-                <input
-                    type="text"
-                    placeholder="Name"
-                    className="w-full border px-3 py-2 rounded"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Photo URL"
-                    className="w-full border px-3 py-2 rounded"
-                    value={photoURL}
-                    onChange={(e) => setPhotoURL(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full border px-3 py-2 rounded"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    className="w-full border px-3 py-2 rounded"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit" className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700">
-                    Register
-                </button>
-            </form>
-            <div className="mt-4 text-center">
-                <p>
-                    Already have an account?{" "}
-                    <Link to="/login" className="text-purple-600 hover:underline">
-                        Login
-                    </Link>
-                </p>
-                <button
-                    onClick={handleGoogleLogin}
-                    className="mt-4 w-full border py-2 rounded hover:bg-gray-100"
-                >
-                    Continue with Google
-                </button>
+        <div className="min-h-screen flex items-center justify-center bg-base-100 text-base-content px-4">
+            <div className="card w-full max-w-md shadow-lg bg-base-100 border border-base-300">
+                <div className="card-body">
+                    <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
+                    <form onSubmit={handleRegister} className="space-y-4">
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            className="input input-bordered w-full"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Photo URL"
+                            className="input input-bordered w-full"
+                            value={photoURL}
+                            onChange={(e) => setPhotoURL(e.target.value)}
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="input input-bordered w-full"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="input input-bordered w-full"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button type="submit" className="btn btn-primary w-full text-white">
+                            Register
+                        </button>
+                    </form>
+                    <div className="mt-4 text-center">
+                        <p>
+                            Already have an account?{" "}
+                            <Link to="/login" className="text-purple-500 hover:underline">
+                                Login
+                            </Link>
+                        </p>
+                        <button
+                            onClick={handleGoogleLogin}
+                            className="btn btn-outline w-full mt-4"
+                        >
+                            Continue with Google
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
